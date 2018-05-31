@@ -1,13 +1,15 @@
 # yield_self
 
-This gem implements the `Object#yield_self` method that is [coming](https://bugs.ruby-lang.org/issues/6721) in Ruby 2.5
-for earlier versions of ruby.
+This gem implements the `Object#yield_self` method that is in Ruby 2.5
+for earlier versions of Ruby. The `#then` alias that is [coming](https://bugs.ruby-lang.org/issues/14594)
+in Ruby 2.6 is also supported.
 
 `#yield_self` is like `#tap` but returns the result of the block instead of `self`:
 
 ```ruby
 42.tap { |num| num.to_s } #=> 42
 42.yield_self { |num| num.to_s } #=> "42"
+42.then { |num| num.to_s } #=> "42"
 ```
 
 ## Installation
